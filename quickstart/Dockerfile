@@ -1,10 +1,7 @@
 # Stage 1
-FROM alpine:latest AS build
+FROM hugomods/hugo AS build
 
-# Install the Hugo go app.
-RUN apk add --update hugo
-
-WORKDIR /opt/HugoApp
+WORKDIR /src
 
 # Copy Hugo config into the container Workdir.
 COPY . .
@@ -19,7 +16,7 @@ FROM nginx:1.25-alpine
 WORKDIR /usr/share/nginx/html
 
 # Copy HTML from previous build into the Workdir.
-COPY --from=build /opt/HugoApp/public .
+COPY --from=build /src/public .
 
 # Expose port 80
 EXPOSE 80/tcp
