@@ -15,7 +15,7 @@ hugo server
 
 I'm able to see the basic, empty Ananke site at localhost:1313.
 It has "My New Hugo Site" in the top left corner,
-a centered <h1> of "My New Hugo Site",
+a centered h1 of "My New Hugo Site",
 and "© My New Hugo Site 2024" as a footer in the bottom left
 
 I then tried to build it into a Dockerfile with this blog post
